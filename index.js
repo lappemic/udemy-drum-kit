@@ -7,12 +7,14 @@ for (var i = 0; i < nrOfButtons; i++) {
         [i].addEventListener('click', function () {
             var buttonInnerHTML = this.innerHTML;
             playSound(buttonInnerHTML);
+            animateButton(buttonInnerHTML);
         });
 }
 
 // Detect keypress
 document.addEventListener('keydown', function (event) {
     playSound(event.key);
+    animateButton(event.key);
 });
 
 function playSound(key) {
@@ -56,4 +58,14 @@ function playSound(key) {
             console.log(buttonInnerHTML);
             break;
     }
+}
+
+function animateButton(key) {
+    var activeButton = document.querySelector('.' + key);
+
+    activeButton.classList.add('pressed'); // defined in the styles.css
+
+    setTimeout(function () {
+        activeButton.classList.remove('pressed'), 100;
+    });
 }
