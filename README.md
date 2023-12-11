@@ -4,6 +4,8 @@
 
 A simple interactive drum kit web application. Users can play drum sounds by clicking buttons or pressing keys on their keyboard.
 
+![Application screenshot](./images/application_screenshot.png)
+
 ## Features
 
 -   Clickable drum buttons.
